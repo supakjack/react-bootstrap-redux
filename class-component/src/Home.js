@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { Component } from 'react';
 
-function Home() {
+export class Home extends Component {
+  render() {
     return (
-        <div>
-            <h2>สวัสดีฟังก์ชันคอมโพเนน</h2>
-        </div>
-    )
+      <div>
+        <h2>ข้อมูลของ Home Component</h2>
+        <p>{this.props.name}</p>
+        <p>{this.props.address}</p>
+      </div>
+    );
+  }
 }
 
-export default Home
+export default Home;

@@ -10,7 +10,7 @@ export class App extends Component {
     return (
       <div>
         <h1 style={txtStyle}>สวัสดี คลาสคอมโพเนน</h1>
-        <Home />
+        <Home name="My Mother Home" address="Bangkok" />
       </div>
     );
   }
