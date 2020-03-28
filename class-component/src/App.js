@@ -9,13 +9,15 @@ export class App extends Component {
     };
   }
 
+  addData = () => {
+    this.setState({ data: this.state.data + 1 });
+  };
+
   render() {
     return (
       <div>
         <p>ข้อมูลปัจจุบัน : {this.state.data}</p>
-        <button onClick={() => this.setState({ data: this.state.data + 1 })}>
-          คลิก
-        </button>
+        <button onClick={this.addData}>คลิก</button>
       </div>
     );
   }
