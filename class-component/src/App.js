@@ -1,15 +1,19 @@
-import React, { Component } from 'react'
-import Home from './Home'
+import React, { Component } from 'react';
+import Home from './Home';
 
 export class App extends Component {
   render() {
+    const txtStyle = {
+      color: 'white',
+      backgroundColor: 'gray'
+    };
     return (
       <div>
-        <h1>สวัสดี คลาสคอมโพเนน</h1>
+        <h1 style={txtStyle}>สวัสดี คลาสคอมโพเนน</h1>
         <Home />
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
