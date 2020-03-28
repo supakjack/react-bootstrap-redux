@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
 
 function App() {
-  const iniData = 0;
-  const [data, setData] = useState(iniData);
+  const [data, setData] = useState([]);
+
+  function addData() {
+    setData([
+      ...data,
+      {
+        value: Math.random()
+      }
+    ]);
+  }
+
   return (
     <div>
-      <p>ข้อมูลปัจจุบัน : {data}</p>
-      <button onClick={() => setData(data+1)}>เพิ่มค่า</button>
-      <button onClick={() => setData(data-1)}>ลดค่า</button>
-      <button onClick={() => setData(iniData)}>ล้างค่า</button>
+      <button onClick={addData}>เพิ่มข้อมูล</button>
+      <ul>
+        {data.map((item,index) => (
+          <li key={index} >{item.value}</li>
+        ))}
+      </ul>
     </div>
   );
 }
