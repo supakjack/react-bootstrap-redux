@@ -1,16 +1,21 @@
 import React, { Component } from 'react';
-import Home from './Home';
 
 export class App extends Component {
-  render() {
-    const txtStyle = {
-      color: 'white',
-      backgroundColor: 'gray'
+  constructor() {
+    super();
+
+    this.state = {
+      data: 0
     };
+  }
+
+  render() {
     return (
       <div>
-        <h1 style={txtStyle}>สวัสดี คลาสคอมโพเนน</h1>
-        <Home name="My Mother Home" address="Bangkok" />
+        <p>ข้อมูลปัจจุบัน : {this.state.data}</p>
+        <button onClick={() => this.setState({ data: this.state.data + 1 })}>
+          คลิก
+        </button>
       </div>
     );
   }
