@@ -4,9 +4,11 @@ import Header from './Header';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <h1>Hello Main Component</h1>
+    <div>
+      <Header title="Thai vb.net Core" />
+      <div className="App">
+        <h1>Hello Main Component</h1>
+      </div>
     </div>
   );
 }
