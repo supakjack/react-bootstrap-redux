@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 
 export class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      data: 0
-    };
+  constructor(props) {
+    super(props);
+    this.state = { fullname: '' };
+    this.fullnameChange = this.fullnameChange.bind(this);
   }
 
-  addData = () => {
-    this.setState({ data: this.state.data + 1 });
+  fullnameChange = e => {
+    this.setState({ fullname: e.target.value });
   };
 
   render() {
     return (
       <div>
-        <p>ข้อมูลปัจจุบัน : {this.state.data}</p>
-        <button onClick={this.addData}>คลิก</button>
+        <p>ชื่อ-สกุล {this.state.fullname}</p>
+        <input
+          type="text"
+          value={this.state.fullname}
+          onChange={this.fullnameChange}
+        />
       </div>
     );
   }
