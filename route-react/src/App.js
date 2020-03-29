@@ -1,25 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home';
+import Webboard from './components/Webboard';
+import Contactus from './components/Contactus';
+import Urlnotfound from './components/Urlnotfound';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <ul>
+          <li>
+            <Link to="/">หน้าแรก</Link>
+          </li>
+          <li>
+            <Link to="/webboard">เว็บบอร์ด</Link>
+          </li>
+          <li>
+            <Link to="/contactus">ติดต่อเรา</Link>
+          </li>
+        </ul>
+      </div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/webboard" component={Webboard} />
+        <Route exact path="/contactus" component={Contactus} />
+        <Route component={Urlnotfound} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
